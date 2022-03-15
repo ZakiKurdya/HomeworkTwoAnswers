@@ -1,7 +1,6 @@
 package com.example.homeworktwoanswers;
 
 import javafx.application.Application;
-import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -13,9 +12,7 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-
 import java.util.Objects;
-
 
 public class Lecture9 extends Application {
     private ListView<String> listViewSource, listViewDest;
@@ -97,7 +94,7 @@ public class Lecture9 extends Application {
     }
 
     public static void main(String[] args) {
-        launch();
+        launch(args);
     }
 
     private class MyEventHandler implements EventHandler<ActionEvent> {
@@ -107,8 +104,10 @@ public class Lecture9 extends Application {
 
             switch (buttonName) {
                 case "Add" -> {
-                    if (!textFieldName.getText().equals(""))
+                    if (!textFieldName.getText().equals("")){
                         listViewSource.getItems().add(textFieldName.getText());
+                        textFieldName.setText("");
+                    }
                 }
                 case "Delete" -> listViewSource.getItems().remove(listViewSource.getSelectionModel().getSelectedItem());
                 case "Update" -> {
@@ -118,7 +117,7 @@ public class Lecture9 extends Application {
                         listViewSource.getItems().set(selectedIndex, editedText);
                 }
                 case "Copy" -> {
-                    if (!textFieldName.getText().equals("")){
+                    if (!listViewSource.getItems().isEmpty() && !listViewSource.getSelectionModel().isEmpty()){
                         if(!checkBoxAll.isSelected())
                             listViewDest.getItems().add(listViewSource.getSelectionModel().getSelectedItem());
                         else
@@ -134,5 +133,5 @@ public class Lecture9 extends Application {
             }
         }
     }
-
 }
+// Zaki Kurdya
