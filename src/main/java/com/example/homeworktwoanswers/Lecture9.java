@@ -12,6 +12,7 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
 import java.util.Objects;
 
 public class Lecture9 extends Application {
@@ -38,7 +39,7 @@ public class Lecture9 extends Application {
 
         checkBoxAll = new CheckBox("Select All");
         checkBoxAll.setOnAction(event -> {
-            if(!checkBoxAll.isSelected())
+            if (!checkBoxAll.isSelected())
                 listViewSource.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
             else
                 listViewSource.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
@@ -69,14 +70,14 @@ public class Lecture9 extends Application {
         HBox hBox3 = new HBox(10, buttonAdd, buttonDel, buttonUpdate, buttonCopy, buttonClear);
         hBox3.setAlignment(Pos.CENTER);
 
-        VBox vBox1 = new VBox(10, hBox1, textFieldName, checkBoxAll, hBox2, hBox3);
+        VBox vBox1 = new VBox(12, hBox1, textFieldName, checkBoxAll, hBox2, hBox3);
         vBox1.setPadding(new Insets(20));
         vBox1.setAlignment(Pos.CENTER);
 
-        radioButtonGold.setOnAction(e->
+        radioButtonGold.setOnAction(e ->
                 vBox1.setStyle("-fx-background-color:gold")
         );
-        radioButtonCyan.setOnAction(e->
+        radioButtonCyan.setOnAction(e ->
                 vBox1.setStyle("-fx-background-color:cyan")
         );
 
@@ -85,9 +86,10 @@ public class Lecture9 extends Application {
         flowPane.setAlignment(Pos.CENTER);
 
         Scene scene = new Scene(flowPane);
-        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("styles.css")).toExternalForm());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("Lecture9Style.css")).toExternalForm());
 
         primaryStage.setScene(scene);
+        primaryStage.setResizable(false);
         primaryStage.setTitle("Lecture9 App");
         primaryStage.getIcons().add(new Image(Objects.requireNonNull(Lecture9.class.getResourceAsStream("code.png"))));
         primaryStage.show();
@@ -104,7 +106,7 @@ public class Lecture9 extends Application {
 
             switch (buttonName) {
                 case "Add" -> {
-                    if (!textFieldName.getText().equals("")){
+                    if (!textFieldName.getText().equals("")) {
                         listViewSource.getItems().add(textFieldName.getText());
                         textFieldName.setText("");
                     }
@@ -117,8 +119,8 @@ public class Lecture9 extends Application {
                         listViewSource.getItems().set(selectedIndex, editedText);
                 }
                 case "Copy" -> {
-                    if (!listViewSource.getItems().isEmpty() && !listViewSource.getSelectionModel().isEmpty()){
-                        if(!checkBoxAll.isSelected())
+                    if (!listViewSource.getItems().isEmpty() && !listViewSource.getSelectionModel().isEmpty()) {
+                        if (!checkBoxAll.isSelected())
                             listViewDest.getItems().add(listViewSource.getSelectionModel().getSelectedItem());
                         else
                             listViewDest.getItems().addAll(listViewSource.getSelectionModel().getSelectedItems());
