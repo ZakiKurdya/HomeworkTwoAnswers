@@ -1,4 +1,4 @@
-package com.example.homeworktwoanswers;
+package com.example.homeworktwoanswers.Lecture11;
 
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -71,7 +71,7 @@ class MainScreen extends Stage {
         Scene scene = new Scene(borderPane, 1000, 700);
         this.setScene(scene);
         this.setTitle("Advanced JavaFX Screen");
-        this.getIcons().add(new Image(Objects.requireNonNull(MainScreen.class.getResourceAsStream("code.png"))));
+        this.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("code.png"))));
 
         sliderFontSize.valueProperty().addListener(event ->
                 textArea.setStyle("-fx-font-size: " + sliderFontSize.getValue() + "pt"));

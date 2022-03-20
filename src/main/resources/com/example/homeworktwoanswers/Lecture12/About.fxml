@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="197.0" prefWidth="460.0" spacing="12.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.homeworktwoanswers.Lecture12.AboutScreenController">
+   <Label prefHeight="99.0" prefWidth="419.0" text="Hello there!&#10;I'm Zaki Kurdya, and my ID is 120200706.&#10;I am enrolled in the Programming 3 Course at IUG..." wrapText="true">
+      <opaqueInsets>
+         <Insets bottom="12.0" />
+      </opaqueInsets>
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Label>
+   <Button alignment="CENTER" mnemonicParsing="false" onAction="#closeStage" style="-fx-background-radius: 50; -fx-border-radius: 50; -fx-background-color: #3232c2; -fx-pref-width: 100;" text="OK" textAlignment="CENTER" textFill="WHITE">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Button>
+</VBox>

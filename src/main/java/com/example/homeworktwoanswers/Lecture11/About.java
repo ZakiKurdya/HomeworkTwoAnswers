@@ -1,4 +1,4 @@
-package com.example.homeworktwoanswers;
+package com.example.homeworktwoanswers.Lecture11;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -30,7 +30,7 @@ public class About extends Stage {
         Scene scene = new Scene(vBox, 400, 150);
         this.setScene(scene);
         this.setTitle("About");
-        this.getIcons().add(new Image(Objects.requireNonNull(About.class.getResourceAsStream("code.png"))));
+        this.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("code.png"))));
         this.setResizable(false);
         this.show();
     }

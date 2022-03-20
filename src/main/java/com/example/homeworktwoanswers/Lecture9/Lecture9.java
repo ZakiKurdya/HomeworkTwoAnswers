@@ -1,4 +1,4 @@
-package com.example.homeworktwoanswers;
+package com.example.homeworktwoanswers.Lecture9;
 
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -86,12 +86,12 @@ public class Lecture9 extends Application {
         flowPane.setAlignment(Pos.CENTER);
 
         Scene scene = new Scene(flowPane);
-        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("Lecture9Style.css")).toExternalForm());
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toExternalForm());
 
         primaryStage.setScene(scene);
         primaryStage.setResizable(false);
         primaryStage.setTitle("Lecture9 App");
-        primaryStage.getIcons().add(new Image(Objects.requireNonNull(Lecture9.class.getResourceAsStream("code.png"))));
+        primaryStage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("code.png"))));
         primaryStage.show();
     }
 

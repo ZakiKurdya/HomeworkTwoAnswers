@@ -4,7 +4,10 @@ module com.example.homeworktwoanswers {
     requires javafx.web;
     requires java.logging;
 
-
-    opens com.example.homeworktwoanswers to javafx.fxml;
-    exports com.example.homeworktwoanswers;
+    exports com.example.homeworktwoanswers.Lecture9;
+    opens com.example.homeworktwoanswers.Lecture9 to javafx.fxml;
+    exports com.example.homeworktwoanswers.Lecture11;
+    opens com.example.homeworktwoanswers.Lecture11 to javafx.fxml;
+    exports com.example.homeworktwoanswers.Lecture12;
+    opens com.example.homeworktwoanswers.Lecture12 to javafx.fxml;
 }

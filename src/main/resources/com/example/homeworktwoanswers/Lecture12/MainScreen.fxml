@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.web.WebView?>
+
+<BorderPane prefHeight="539.0" prefWidth="803.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.homeworktwoanswers.Lecture12.MainScreenController">
+   <top>
+      <MenuBar prefHeight="25.0" prefWidth="723.0" BorderPane.alignment="CENTER">
+         <Menu mnemonicParsing="false" text="File">
+            <MenuItem fx:id="menuItemOpen" mnemonicParsing="false" onAction="#menuItemsHandle" text="Open"/>
+            <MenuItem fx:id="menuItemClose" mnemonicParsing="false" onAction="#menuItemsHandle" text="Close"/>
+            <MenuItem fx:id="menuItemSave" mnemonicParsing="false" onAction="#menuItemsHandle" text="Save"/>
+            <MenuItem fx:id="menuItemExit" mnemonicParsing="false" onAction="#menuItemsHandle" text="Exit"/>
+         </Menu>
+         <Menu mnemonicParsing="false" text="Color">
+            <MenuItem fx:id="menuItemGold" mnemonicParsing="false" onAction="#menuItemsHandle" text="Gold"/>
+            <MenuItem fx:id="menuItemCyan" mnemonicParsing="false" onAction="#menuItemsHandle" text="Cyan"/>
+            <MenuItem fx:id="menuItemRed" mnemonicParsing="false" onAction="#menuItemsHandle" text="Red"/>
+            <MenuItem fx:id="menuItemReset" mnemonicParsing="false" onAction="#menuItemsHandle" text="Reset"/>
+         </Menu>
+         <Menu mnemonicParsing="false" text="Help">
+            <MenuItem fx:id="menuItemAbout" mnemonicParsing="false" onAction="#menuItemsHandle" text="About"/>
+         </Menu>
+      </MenuBar>
+   </top>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" spacing="15.0" BorderPane.alignment="CENTER">
+         <TextArea fx:id="textArea" maxHeight="300.0" maxWidth="500.0" prefHeight="90.0" prefWidth="358.0"/>
+         <Slider fx:id="sliderFontSize" majorTickUnit="5.0" max="35.0" min="5.0" minorTickCount="4"
+                 onMouseReleased="#sliderFontSizeHandle" prefHeight="14.0" prefWidth="723.0" showTickLabels="true"
+                 showTickMarks="true" snapToTicks="true" value="12.0"/>
+         <HBox prefHeight="356.0" prefWidth="803.0" spacing="5.0">
+            <ComboBox fx:id="comboBoxLinks" onAction="#comboBoxLinksHandle" prefWidth="150.0"/>
+            <WebView fx:id="webView" minHeight="-1.0" prefHeight="342.0" prefWidth="656.0"/>
+         </HBox>
+      </VBox>
+   </center>
+</BorderPane>
